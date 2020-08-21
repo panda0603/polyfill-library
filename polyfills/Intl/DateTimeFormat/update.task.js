@@ -55,10 +55,7 @@ configSource.dependencies.push("Intl.DateTimeFormat");
 configSource.test = { ci: false };
 
 function intlLocaleDetectFor(locale) {
-  return `'Intl' in self && 
-  'DateTimeFormat' in self.Intl && 
-  'formatToParts' in self.Intl.DateTimeFormat &&
-  self.Intl.DateTimeFormat.supportedLocalesOf('${locale}').length`;
+  return `'Intl' in self && 'DateTimeFormat' in self.Intl && 'formatToParts' in self.Intl.DateTimeFormat && self.Intl.DateTimeFormat.supportedLocalesOf('${locale}').length`;
 }
 
 console.log(
